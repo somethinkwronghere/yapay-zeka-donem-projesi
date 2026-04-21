@@ -107,8 +107,8 @@ Ders kılavuzunun 12 haftalık takvimine göre ilerleme:
 | 3 | EDA raporu (`01_eda.ipynb`) | ✅ Tamamlandı | Çalıştırılmış defter + 6 figür (`docs/images/eda_*.png`) + ADF / ACF / QQ / seans analizi |
 | 4 | Baseline ML modeli | ✅ Tamamlandı | `02_baselines.ipynb` — Naive, Drift, Seasonal-24/168, MA(24), AR(p) + `baseline_scores.csv` |
 | 5 | En az 3 algoritma karşılaştırması | ✅ Tamamlandı | `03_ml_comparison.ipynb` — RF / XGBoost / LightGBM, 25 feature, yön doğruluğu **%51.3–51.5** |
-| **6** | **Derin öğrenme modeli (LSTM/Transformer)** | ⏳ Sırada | `04_deep_learning.ipynb` |
-| 7 | Metrik raporu | 🟡 Kısmen | `src/metrics.py` ve baseline skor tablosu hazır; ML/DL skorları eklenince kapanır |
+| 6 | Derin öğrenme modeli (LSTM/Transformer) | ✅ Tamamlandı | `04_deep_learning.ipynb` — PyTorch LSTM (64d) + Transformer (64d, 4-head), checkpoint kaydı |
+| **7** | **Metrik raporu** | 🟡 Kısmen | 11 modelin birleşik tablosu `data/processed/all_model_scores.csv` — istatistiksel anlamlılık testi eklenecek |
 | 8–9 | Model optimizasyonu | ⏳ | Walk-forward tuning + GARCH ölçekleme |
 | 10 | Streamlit demo | 🟡 İskelet | `api/app.py` temel yapı hazır; forward test + senaryo üretimi eklenecek |
 | 11 | Doküman + kullanım kılavuzu | 🟡 Kısmen | README, `docs/project_plan.md`, `docs/prior_work.md`, `data/README.md` yazıldı; final rapor bekliyor |
@@ -121,7 +121,9 @@ Ders kılavuzunun 12 haftalık takvimine göre ilerleme:
 - ✅ EDA — durağanlık testleri, ACF/PACF, volatilite kümelenmesi kanıtı, seans analizi
 - ✅ 6 baseline modelin validation + test skorları (**naive RMSE ≈ 10 pip** → ML/DL için kırılması gereken taban)
 - ✅ 3 gradient-boosting ensemble (RF/XGBoost/LightGBM) ile 25 feature'lı karşılaştırma; **yön doğruluğu baseline'ın %1.5 üzerinde**
-- ✅ `src/` altında ortak yardımcılar: veri yükleyici, özellik mühendisliği (lag, volatilite, RSI, ATR, takvim), metrik kütüphanesi, baseline sınıfları
+- ✅ PyTorch LSTM ve Transformer encoder; model checkpoint'leri `data/processed/checkpoints/` altında (Streamlit demo tarafından yüklenecek)
+- ✅ 11 modelin birleşik skor tablosu: `data/processed/all_model_scores.csv`
+- ✅ `src/` altında ortak yardımcılar: veri yükleyici, özellik mühendisliği (lag, volatilite, RSI, ATR, takvim), metrik kütüphanesi, baseline + derin öğrenme sınıfları
 
 Detaylı plan için: [`docs/project_plan.md`](docs/project_plan.md)
 
