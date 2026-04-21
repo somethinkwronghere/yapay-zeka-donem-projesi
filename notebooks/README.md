@@ -5,7 +5,7 @@ Projeye ait Jupyter defterleri. Sıra numarası ile proje yaşam döngüsünü t
 | Defter | Hafta | İçerik |
 |--------|-------|--------|
 | `01_eda.ipynb` | 3 | Keşifsel veri analizi, veri kalitesi, görselleştirmeler |
-| `02_baseline.ipynb` | 4 | Naive + lineer baseline modeller (eklenecek) |
+| `02_baselines.ipynb` | 4 | Naive, Drift, Seasonal-24H/168H, MA(24), AR(p) — RMSE/dir_acc tablosu |
 | `03_ml_comparison.ipynb` | 5 | RF / XGBoost / LightGBM karşılaştırması (eklenecek) |
 | `04_deep_learning.ipynb` | 6 | LSTM / GRU / 1D-CNN (eklenecek) |
 | `05_evaluation.ipynb` | 7 | Walk-forward test ve tüm metrikler (eklenecek) |
