@@ -106,8 +106,8 @@ Ders kılavuzunun 12 haftalık takvimine göre ilerleme:
 | 2 | Veri envanteri | ✅ Tamamlandı | `data/raw/eurusd_h1.csv` + `data/README.md` |
 | 3 | EDA raporu (`01_eda.ipynb`) | ✅ Tamamlandı | Çalıştırılmış defter + 6 figür (`docs/images/eda_*.png`) + ADF / ACF / QQ / seans analizi |
 | 4 | Baseline ML modeli | ✅ Tamamlandı | `02_baselines.ipynb` — Naive, Drift, Seasonal-24/168, MA(24), AR(p) + `baseline_scores.csv` |
-| **5** | **En az 3 algoritma karşılaştırması** | ⏳ Sırada | RF / XGBoost / LightGBM (`03_ml_comparison.ipynb`) |
-| 6 | Derin öğrenme modeli (LSTM/Transformer) | ⏳ | `04_deep_learning.ipynb` |
+| 5 | En az 3 algoritma karşılaştırması | ✅ Tamamlandı | `03_ml_comparison.ipynb` — RF / XGBoost / LightGBM, 25 feature, yön doğruluğu **%51.3–51.5** |
+| **6** | **Derin öğrenme modeli (LSTM/Transformer)** | ⏳ Sırada | `04_deep_learning.ipynb` |
 | 7 | Metrik raporu | 🟡 Kısmen | `src/metrics.py` ve baseline skor tablosu hazır; ML/DL skorları eklenince kapanır |
 | 8–9 | Model optimizasyonu | ⏳ | Walk-forward tuning + GARCH ölçekleme |
 | 10 | Streamlit demo | 🟡 İskelet | `api/app.py` temel yapı hazır; forward test + senaryo üretimi eklenecek |
@@ -120,7 +120,8 @@ Ders kılavuzunun 12 haftalık takvimine göre ilerleme:
 - ✅ Önceki 13 Colab denemesinin [envanteri ve karşılaştırması](docs/prior_work.md) (Chronos, Diffusion+Transformer, TimeGAN aileleri)
 - ✅ EDA — durağanlık testleri, ACF/PACF, volatilite kümelenmesi kanıtı, seans analizi
 - ✅ 6 baseline modelin validation + test skorları (**naive RMSE ≈ 10 pip** → ML/DL için kırılması gereken taban)
-- ✅ `src/` altında ortak yardımcılar: veri yükleyici, özellik mühendisliği, metrik kütüphanesi, baseline sınıfları
+- ✅ 3 gradient-boosting ensemble (RF/XGBoost/LightGBM) ile 25 feature'lı karşılaştırma; **yön doğruluğu baseline'ın %1.5 üzerinde**
+- ✅ `src/` altında ortak yardımcılar: veri yükleyici, özellik mühendisliği (lag, volatilite, RSI, ATR, takvim), metrik kütüphanesi, baseline sınıfları
 
 Detaylı plan için: [`docs/project_plan.md`](docs/project_plan.md)
 
