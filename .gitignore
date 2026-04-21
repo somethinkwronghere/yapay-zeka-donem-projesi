@@ -1,0 +1,79 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+.env
+.envrc
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+profile_default/
+ipython_config.py
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- ML / experiments ---
+mlruns/
+wandb/
+.mlflow/
+lightning_logs/
+runs/
+
+# --- Model artifacts (opsiyonel: en iyi modeli commit'leriz, ara geçişleri ignore) ---
+models/checkpoints/
+models/tmp/
+*.ckpt
+
+# --- Data (büyük ham veri ignore; küçük örnekler commit'lenir) ---
+data/processed/*.parquet
+data/processed/*.feather
+data/external/
+!data/**/.gitkeep
+!data/**/README.md
+
+# --- Coverage / testing ---
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Streamlit / Flask ---
+.streamlit/secrets.toml
+
+# --- Logs ---
+*.log
+logs/
