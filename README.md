@@ -34,20 +34,28 @@ ortaya koymaktır.
 
 ```text
 .
-├── data/            # Ham ve işlenmiş veri
-│   ├── raw/         # MT5/Kaggle export orijinal CSV'ler
-│   └── processed/   # EDA sonrası üretilen parquet/feather dosyaları (gitignore)
-├── notebooks/       # Jupyter defterleri
-│   ├── 01_eda.ipynb # Hafta 3 EDA teslimi
-│   └── archive/     # Önceki Colab denemeleri (MarketGPT vb.)
-├── src/             # Yeniden kullanılabilir Python kaynak kodu
-│   ├── data_loader.py
-│   ├── features.py
-│   ├── models/
+├── data/                         # Ham ve işlenmiş veri
+│   ├── raw/eurusd_h1.csv         # MT5 export, ~100k mum
+│   └── processed/
+│       └── baseline_scores.csv   # Baseline skor tablosu (02 tarafından üretilir)
+├── notebooks/                    # Jupyter defterleri
+│   ├── 01_eda.ipynb              # Hafta 3 – çalıştırılmış, çıktılar gömülü
+│   ├── 02_baselines.ipynb        # Hafta 4 – Naive, Drift, Seasonal, MA, AR
+│   └── archive/
+│       └── prior_experiments/    # 13 eski Colab denemesi (Chronos, Diffusion, TimeGAN)
+├── src/                          # Yeniden kullanılabilir Python kaynak kodu
+│   ├── data_loader.py            # Load + train/val/test split
+│   ├── features.py               # Return, rolling stat, calendar features
+│   ├── metrics.py                # RMSE, MAE, MAPE, yön doğruluğu, pip RMSE
+│   ├── models/baseline.py        # NaiveLastValue, DriftModel
 │   └── utils.py
-├── api/             # Streamlit / Flask demo uygulaması
-│   └── app.py
-├── docs/            # Proje raporu, sunum, hoca kılavuzu
+├── api/                          # Streamlit demo uygulaması
+│   └── app.py                    # İskelet (Hafta 10'da tamamlanacak)
+├── docs/
+│   ├── project_plan.md           # 12 haftalık detaylı plan
+│   ├── prior_work.md             # 13 eski modelin karşılaştırmalı özeti
+│   ├── proje_kilavuzu.pdf        # Hoca kılavuzu
+│   └── images/                   # EDA + baseline figürleri
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -92,19 +100,27 @@ streamlit run api/app.py
 
 Ders kılavuzunun 12 haftalık takvimine göre ilerleme:
 
-| Hafta | Teslim | Durum |
-|-------|--------|-------|
-| 1 | Grup formu & konu seçimi | ✅ |
-| 2 | Veri envanteri | ✅ |
-| **3** | **EDA raporu (`01_eda.ipynb`)** | 🚧 Devam ediyor |
-| 4 | Baseline ML modeli (sklearn) | ⏳ |
-| 5 | En az 3 algoritma karşılaştırması | ⏳ |
-| 6 | Derin öğrenme modeli (LSTM/Transformer) | ⏳ |
-| 7 | Metrik raporu | ⏳ |
-| 8-9 | Model optimizasyonu | ⏳ |
-| 10 | Streamlit demo | ⏳ |
-| 11 | Doküman + kullanım kılavuzu | ⏳ |
-| 12 | Final sunumu + canlı demo | ⏳ |
+| Hafta | Teslim | Durum | Çıktı |
+|-------|--------|-------|-------|
+| 1 | Grup formu & konu seçimi | ✅ Tamamlandı | Hoca onayı |
+| 2 | Veri envanteri | ✅ Tamamlandı | `data/raw/eurusd_h1.csv` + `data/README.md` |
+| 3 | EDA raporu (`01_eda.ipynb`) | ✅ Tamamlandı | Çalıştırılmış defter + 6 figür (`docs/images/eda_*.png`) + ADF / ACF / QQ / seans analizi |
+| 4 | Baseline ML modeli | ✅ Tamamlandı | `02_baselines.ipynb` — Naive, Drift, Seasonal-24/168, MA(24), AR(p) + `baseline_scores.csv` |
+| **5** | **En az 3 algoritma karşılaştırması** | ⏳ Sırada | RF / XGBoost / LightGBM (`03_ml_comparison.ipynb`) |
+| 6 | Derin öğrenme modeli (LSTM/Transformer) | ⏳ | `04_deep_learning.ipynb` |
+| 7 | Metrik raporu | 🟡 Kısmen | `src/metrics.py` ve baseline skor tablosu hazır; ML/DL skorları eklenince kapanır |
+| 8–9 | Model optimizasyonu | ⏳ | Walk-forward tuning + GARCH ölçekleme |
+| 10 | Streamlit demo | 🟡 İskelet | `api/app.py` temel yapı hazır; forward test + senaryo üretimi eklenecek |
+| 11 | Doküman + kullanım kılavuzu | 🟡 Kısmen | README, `docs/project_plan.md`, `docs/prior_work.md`, `data/README.md` yazıldı; final rapor bekliyor |
+| 12 | Final sunumu + canlı demo | ⏳ | Hafta 12 |
+
+**Şu ana kadar üretilenler:**
+
+- ✅ GitHub repo'su + 15+ anlamlı commit, 12 haftalık plan belgesi
+- ✅ Önceki 13 Colab denemesinin [envanteri ve karşılaştırması](docs/prior_work.md) (Chronos, Diffusion+Transformer, TimeGAN aileleri)
+- ✅ EDA — durağanlık testleri, ACF/PACF, volatilite kümelenmesi kanıtı, seans analizi
+- ✅ 6 baseline modelin validation + test skorları (**naive RMSE ≈ 10 pip** → ML/DL için kırılması gereken taban)
+- ✅ `src/` altında ortak yardımcılar: veri yükleyici, özellik mühendisliği, metrik kütüphanesi, baseline sınıfları
 
 Detaylı plan için: [`docs/project_plan.md`](docs/project_plan.md)
 
