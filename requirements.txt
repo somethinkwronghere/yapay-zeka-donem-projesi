@@ -1,0 +1,42 @@
+# --- Core ---
+numpy>=1.26
+pandas>=2.2
+scipy>=1.12
+
+# --- Visualization ---
+matplotlib>=3.8
+seaborn>=0.13
+plotly>=5.20
+
+# --- Classical ML ---
+scikit-learn>=1.4
+xgboost>=2.0
+lightgbm>=4.3
+
+# --- Deep Learning (birini seç, iki motor da requirements içinde) ---
+# Not: Kendi GPU/CPU durumuna göre uygun indeks URL'ini pip'e ayrıca verebilirsin.
+torch>=2.2
+# tensorflow>=2.15
+
+# --- Time series özel ---
+statsmodels>=0.14
+pmdarima>=2.0.4
+
+# --- Notebook ---
+jupyterlab>=4.1
+ipykernel>=6.29
+ipywidgets>=8.1
+
+# --- Demo / API ---
+streamlit>=1.33
+flask>=3.0
+
+# --- Utilities ---
+tqdm>=4.66
+pyyaml>=6.0
+python-dotenv>=1.0
+joblib>=1.4
+
+# --- Opsiyonel: açıklanabilirlik / MLOps (bonus kriterler) ---
+# shap>=0.45
+# mlflow>=2.12
