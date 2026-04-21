@@ -3,7 +3,7 @@
 **EUR/USD 1H Forex Zaman Serisi Tahmini ve Simülasyon Tabanlı Demo**
 
 Sakarya Uygulamalı Bilimler Üniversitesi – Elektrik-Elektronik Mühendisliği
-Yapay Zekaya Giriş (2024-2025 Bahar)
+Yapay Zekaya Giriş Dersi
 
 ---
 
@@ -110,7 +110,7 @@ Detaylı plan için: [`docs/project_plan.md`](docs/project_plan.md)
 
 ## 7. Geliştirici
 
-- **Ad:** Bilal (`somethinkwronghere`)
+- **Ad:** Bilal Burak Tekin (`somethinkwronghere`)
 - **Öğrenci No:** b200101025
 - **Bölüm:** Elektrik-Elektronik Mühendisliği – SUBÜ
 
