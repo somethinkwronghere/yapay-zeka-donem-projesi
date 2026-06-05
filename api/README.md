@@ -1,6 +1,6 @@
 # API / Demo
 
-Bu klasör, kullanıcıların modelle etkileşime girdiği **Streamlit** arayüzünü barındırır. Kılavuzdaki *"Çalışan Demo (Hafta 10)"* teslimi buradan değerlendirilecektir.
+Bu klasör, final sunumunda gösterilecek **Streamlit** arayüzünü barındırır. Demo; EUR/USD verisini, model skorlarını, tahmin/senaryo panelini, rolling forward-test grafiğini ve EDA görsellerini tek ekranda toplar.
 
 ## Çalıştırma
 
@@ -9,18 +9,20 @@ Bu klasör, kullanıcıların modelle etkileşime girdiği **Streamlit** arayüz
 streamlit run api/app.py
 ```
 
-Varsayılan olarak `http://localhost:8501` adresinde açılır.
+Varsayılan adres: `http://localhost:8501`
 
-## Yol Haritası
+## Ekranlar
 
-| Hafta | Özellik | Durum |
-|-------|---------|-------|
-| 10 | Veri yükleme + fiyat grafiği + model seçici kabuk | ✅ İskelet |
-| 10 | Baseline modelle tahmin görseli | ⏳ |
-| 10 | Walk-forward metrik paneli | ⏳ |
-| 11 | Monte Carlo senaryo üretimi | ⏳ |
-| 11 | Indirilebilir rapor (PDF) | ⏳ (opsiyonel) |
+| Sekme | İçerik |
+|-------|--------|
+| Canlı karşılaştırma | Yahoo EURUSD=X saatlik mumları, checkpoint tahminleri, diğer model yolları ve canlı rolling karşılaştırma |
+| Tahmin paneli | Geçmiş kapanış, seçilen model tahmini, senaryo bandı ve CSV indirme |
+| Forward test | Rolling RMSE, MAE, yön isabeti ve gerçek/tahmin grafiği |
+| Model karşılaştırma | Test skorlarının aile bazlı dağılımı ve detaylı skor tablosu |
+| Veri ve EDA | Ham veri özeti, son veri kesiti ve rapor görselleri |
 
-## Uyarı
+## Not
+
+Demo hızlı ve stabil sunum için yerel veri ve kayıtlı skor tablolarıyla çalışır. `LSTM` veya `Transformer` seçildiğinde `data/processed/checkpoints/*.pt` dosyaları yüklenir; ilk tahmin adımı gerçek PyTorch checkpoint inference ile üretilir. Model tek-adım (`t+1`) eğitildiği için daha uzun ufuklar bu sinyalin sönümlü senaryo yolu olarak gösterilir.
 
 Bu uygulama **akademik** bir projenin parçasıdır. Ürettiği tahminler **yatırım tavsiyesi değildir** ve gerçek işlem kararları için kullanılamaz.
