@@ -1,0 +1,18 @@
+dosya,aciklama
+sekil_01_proje_mimarisi.png,"Şekil 1. Projenin veri, özellik, model ve servis katmanlarını gösteren mimari özeti."
+sekil_02_yasam_dongusu.png,Şekil 2. Ders kılavuzundaki yapay zeka proje yaşam döngüsünün bu projedeki karşılıkları.
+sekil_03_eda_fiyat_getiri_volatilite.png,"Şekil 3. Ham kapanış fiyatı, log getiri ve volatilite davranışı."
+sekil_04_eda_train_val_test_ayrimi.png,Şekil 4. Zaman tabanlı train/validation/test ayrımının görsel kontrolü.
+sekil_05_eda_log_getiri_dagilimi.png,Şekil 5. Log getirilerin dağılımı ve finansal seriye özgü kuyruk davranışı.
+sekil_06_eda_acf_pacf.png,Şekil 6. ACF/PACF grafikleriyle kısa dönem bağımlılık ve durağanlık incelemesi.
+sekil_07_eda_seans_saat_gun.png,"Şekil 7. Saat, gün ve işlem seansı bazında hareket analizi."
+sekil_08_eda_saat_gun_heatmap.png,Şekil 8. Haftanın günü ve saat kırılımında ortalama hareket ısı haritası.
+sekil_09_baseline_skorlari.png,Şekil 9. Baseline modellerinin doğrulama ve test metrikleri.
+sekil_10_baseline_tahmin_gercek.png,Şekil 10. Baseline tahminlerinin gerçek kapanış serisiyle karşılaştırılması.
+sekil_11_ml_baseline_karsilastirma.png,Şekil 11. Klasik makine öğrenmesi modellerinin baseline ailesiyle karşılaştırılması.
+sekil_12_ml_tahmin_gercek.png,Şekil 12. Klasik ML tahminlerinin gerçek değerlerle karşılaştırılması.
+sekil_13_ml_ozellik_onemi.png,Şekil 13. Random Forest/XGBoost/LightGBM tarafında öne çıkan öznitelikler.
+sekil_14_ml_ozellik_korelasyonu.png,Şekil 14. Modelleme öncesi öznitelik korelasyon matrisi.
+sekil_15_dl_egitim_egri.png,Şekil 15. LSTM ve Transformer eğitim/doğrulama kayıp eğrileri.
+sekil_16_dl_tahmin_gercek.png,Şekil 16. Derin öğrenme modellerinin gerçek kapanış serisiyle karşılaştırılması.
+sekil_17_dl_tum_modeller.png,Şekil 17. Derin öğrenme modellerinin tüm model ailesi içindeki konumu.
